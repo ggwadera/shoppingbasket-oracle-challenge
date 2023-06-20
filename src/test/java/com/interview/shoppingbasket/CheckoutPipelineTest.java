@@ -42,7 +42,7 @@ public class CheckoutPipelineTest {
     @Test
     void executeAllPassedCheckoutSteps() {
         checkoutPipeline.addStep(new BasketConsolidationCheckoutStep());
-        checkoutPipeline.addStep(new PromotionsFetchingStep(promotionsService));
+        checkoutPipeline.addStep(new PromotionsFetchingCheckoutStep(promotionsService));
         checkoutPipeline.addStep(new RetailPriceCheckoutStep(pricingService));
 
         var checkoutBasket = new Basket();

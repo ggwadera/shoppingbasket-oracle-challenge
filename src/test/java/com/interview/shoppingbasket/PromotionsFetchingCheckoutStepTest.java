@@ -9,7 +9,7 @@ import static com.interview.shoppingbasket.Promotion.PromotionStrategy.*;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-class PromotionsFetchingStepTest {
+class PromotionsFetchingCheckoutStepTest {
 
     @Test
     void execute() {
@@ -26,7 +26,7 @@ class PromotionsFetchingStepTest {
         when(checkoutContext.getBasket()).thenReturn(basket);
         when(promotionsService.getPromotions(basket)).thenReturn(promotions);
 
-        PromotionsFetchingStep promotionsFetchingStep = new PromotionsFetchingStep(promotionsService);
+        var promotionsFetchingStep = new PromotionsFetchingCheckoutStep(promotionsService);
         promotionsFetchingStep.execute(checkoutContext);
 
         verify(promotionsService).getPromotions(basket);

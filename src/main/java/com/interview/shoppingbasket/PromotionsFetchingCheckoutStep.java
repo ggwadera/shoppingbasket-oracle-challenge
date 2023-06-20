@@ -3,7 +3,7 @@ package com.interview.shoppingbasket;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
-public class PromotionsFetchingStep implements CheckoutStep {
+public class PromotionsFetchingCheckoutStep implements CheckoutStep {
 
     private final PromotionsService promotionsService;
 
